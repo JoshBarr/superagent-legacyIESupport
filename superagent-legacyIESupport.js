@@ -92,9 +92,16 @@
 
         // custom headers are not support by XDomainRequest
 
-        // send stuff
-        this.emit('request', this);
-        xhr.send(data);
+        /**
+         * Fixes obscure issue where IE8/9 randomly abort requests:
+         * http://cypressnorth.com/programming/internet-explorer-aborting-ajax-requests-fixed/
+         */
+        var self = this;
+        setTimeout(function() {
+            self.emit('request', self);
+            xhr.send(data);
+        }, 0);
+        
         return this;
     };
 
