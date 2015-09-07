@@ -1,6 +1,6 @@
 {
-  "name": "superagent-legacyiesupport",
-  "version": "1.0.0",
+  "name": "superagent-legacyiesupport-timeout",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/trevorreeves/superagent-legacyIESupport"
